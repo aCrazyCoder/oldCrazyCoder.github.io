@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="aCrazyCoder.github.io"></form>
@@ -67,6 +67,54 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-C++_函数后加const含义" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/01/C++_函数后加const含义/" class="article-date">
+  <time datetime="2018-09-01T11:14:15.000Z" itemprop="datePublished">2018-09-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/01/C++_函数后加const含义/">C++_函数后加const含义</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="const成员函数"><a href="#const成员函数" class="headerlink" title="const成员函数"></a>const成员函数</h1><hr>
+<p>任何不会修改数据成员的函数都应该声明为const类型。如果在编写const成员函数时，不慎修改了数据成员，或者调用了其它非const成员函数，编译器将指出错误，这无疑会提高程序的健壮性。以下程序中，类stack的成员函数GetCount仅用于计数，从逻辑上讲GetCount应当为const函数。编译器将指出GetCount函数中的错误。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">@JeryShao</div><div class="line">classStack</div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Push</span><span class="params">(<span class="keyword">int</span> elem)</span></span>;</div><div class="line">    <span class="function"><span class="keyword">int</span> <span class="title">Pop</span><span class="params">(<span class="keyword">void</span>)</span></span>;</div><div class="line">    intGetCount(<span class="keyword">void</span>) <span class="keyword">const</span>; <span class="comment">// const成员函数</span></div><div class="line">    <span class="keyword">private</span>:</div><div class="line">    intm_num;</div><div class="line">    <span class="keyword">int</span> m_data[<span class="number">100</span>];</div><div class="line">&#125;;</div><div class="line"><span class="keyword">int</span> Stack::GetCount(<span class="keyword">void</span>)<span class="keyword">const</span></div><div class="line">&#123;</div><div class="line">    ++ m_num; <span class="comment">// 编译错误，企图修改数据成员m_num</span></div><div class="line">    Pop();<span class="comment">// 编译错误，企图调用非const函数</span></div><div class="line">    returnm_num;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>关于Const函数的几点规则：</p>
+<blockquote>
+<p>a.const对象只能访问const成员函数,而非const对象可以访问任意的成员函数,包括const成员函数.<br>b.const对象的成员是不可修改的,然而const对象通过指针维护的对象却是可以修改的.<br>c.const成员函数不可以修改对象的数据,不管对象是否具有const性质.它在编译时,以是否修改成员数据为依据,进行检查.<br>e.然而加上mutable修饰符的数据成员,对于任何情况下通过任何手段都可修改,自然此时的const成员函数是可以修改它的</p>
+</blockquote>
+<p>准确的说const是修饰this指向的对象的<br>譬如，我们定义了</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">classA</div><div class="line">&#123;</div><div class="line">    <span class="keyword">public</span>:</div><div class="line">    f(<span class="keyword">int</span>);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>这里f函数其实有两个参数，第一个是A*const this, 另一个才是int类型的参数。<br>如果我们不想f函数改变参数的值，可以把函数原型改为f(const int),但如果我们不允许f改变this指向的对象呢？因为this是隐含参数，const没法直接修饰它，就加在函数的后面了，表示this的类型是constA*const this。<br>const修饰*this是本质，至于说“表示该成员函数不会修改类的数据。否则会编译报错”之类的说法只是一个现象，根源就是因为*this是const类型的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="aCrazyCoder.github.io/2018/09/01/C++_函数后加const含义/" data-id="cjljcch29000058vuladocqi0" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-20180803python读txt写Excel" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -106,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/08/03/20180803python读txt写Excel/" data-id="cjlja6u5h0000z4vuzolm97q6" class="article-share-link">Share</a>
+      <a data-url="aCrazyCoder.github.io/2018/08/03/20180803python读txt写Excel/" data-id="cjljcch2e000158vudj07868a" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Excel-TXT/">Python Excel TXT</a></li></ul>
@@ -224,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/07/29/hello-world/" data-id="cjlja6u600003z4vudp1bwj5s" class="article-share-link">Share</a>
+      <a data-url="aCrazyCoder.github.io/2018/07/29/hello-world/" data-id="cjljcch2k000358vuhi6ftnou" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -244,9 +292,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Excel-TXT/">Python Excel TXT</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Excel-TXT/">Python Excel TXT</a></li></ul>
     </div>
   </div>
 
@@ -254,9 +302,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Python-Excel-TXT/" style="font-size: 10px;">Python Excel TXT</a>
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/Python-Excel-TXT/" style="font-size: 10px;">Python Excel TXT</a>
     </div>
   </div>
 
@@ -265,7 +313,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li></ul>
     </div>
   </div>
 
@@ -273,9 +321,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/09/01/C++_函数后加const含义/">C++_函数后加const含义</a>
+          </li>
         
           <li>
             <a href="/2018/08/03/20180803python读txt写Excel/">Python：批量读取txt写入Excel</a>
@@ -298,7 +350,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 JeryShao<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
