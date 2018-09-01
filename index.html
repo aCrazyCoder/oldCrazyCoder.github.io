@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="aCrazyCoder.github.io"></form>
@@ -98,15 +98,15 @@
 <p>我看到这个问题，第一想到的确实是<a href="https://www.yiibai.com/vba/" target="_blank" rel="external">VBA</a>，但无奈不会o(╥﹏╥)o。其实稍微花点时间，就用<code>Python</code>写了个小程序，很简单。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@JeryShao</span></div><div class="line"><span class="keyword">import</span> os</div><div class="line"><span class="keyword">import</span> xlwt</div><div class="line"><span class="keyword">from</span> msvcrt <span class="keyword">import</span> getch</div><div class="line"></div><div class="line">txt_path = os.getcwd()</div><div class="line">txt_files = os.listdir(txt_path)</div><div class="line">fileList = []</div><div class="line"></div><div class="line"><span class="keyword">for</span> f <span class="keyword">in</span> txt_files:</div><div class="line">        <span class="keyword">if</span>(os.path.isfile(txt_path + <span class="string">'/'</span> + f)):</div><div class="line">            <span class="keyword">if</span> os.path.splitext(f)[<span class="number">1</span>] == <span class="string">'.txt'</span>:</div><div class="line">                fileList.append(f)</div><div class="line"></div><div class="line"><span class="keyword">if</span> len(fileList) == <span class="number">0</span>:</div><div class="line">    print(<span class="string">'当前文件夹下没有TXT文件'</span>)</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    excel = xlwt.Workbook()</div><div class="line">    table = excel.add_sheet(<span class="string">'Sheet 1'</span>)</div><div class="line"></div><div class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> fileList:</div><div class="line">        file_read = open(txt_path + <span class="string">"\\"</span> + file, <span class="string">'r'</span>, encoding=<span class="string">'utf-8'</span>)</div><div class="line">        sourceInLines = file_read.readlines()</div><div class="line">        file_read.close()</div><div class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> range(len(sourceInLines)):</div><div class="line">            table.write(line, int(file.strip(<span class="string">'.txt'</span>)) - <span class="number">1</span>, sourceInLines[line].strip(<span class="string">'\n'</span>))</div><div class="line"></div><div class="line">    excel.save(<span class="string">'test.xls'</span>)</div><div class="line">    print(<span class="string">'导出Excel文件成功'</span>)</div><div class="line"></div><div class="line">print(<span class="string">"Press Enter to exit..."</span>)</div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="keyword">if</span> ord(getch()) == <span class="number">13</span>:</div><div class="line">        <span class="keyword">break</span></div></pre></td></tr></table></figure>
 <p>最终实现效果（举个例子）：</p>
-<p><div align="center"><br><img src="https://thumbnail0.baidupcs.com/thumbnail/b3b225ed989a603f13c13bf758eb0653?fid=3058779283-250528-1061320792571906&time=1533308400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-y61%2FIa6yjvKxtkVLU%2BQGWApyyGo%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=4986101785381754600&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" alt="result"></div></p>
-<p><div align="center"><br><img src="https://thumbnail0.baidupcs.com/thumbnail/3a119d95d0d71afd0d851a5bb7966e15?fid=3058779283-250528-197187688620406&time=1533308400&rt=sh&sign=FDTAER-DCb740ccc5511e5e8fedcff06b081203-PbwvSZRmq6g933RG0aa0l0tgeT0%3D&expires=8h&chkv=0&chkbd=0&chkpc=&dp-logid=4985958693167475731&dp-callid=0&size=c710_u400&quality=100&vuk=-&ft=video" alt="result"></div></p>
+<div align="center"><br><img src="https://i.loli.net/2018/09/01/5b8a649eac257.png" alt="BaiduShurufa_2018-8-3_23-19-56.png"><br><img src="https://i.loli.net/2018/09/01/5b8a64ac4f99e.png" alt="BaiduShurufa_2018-8-3_23-20-25.png"><br></div>
+
 <hr>
 <p>作者 <a href="https://weibo.com/5409638863/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank" rel="external">@JeryShao</a><br>2018 年 08月 03日</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/08/03/20180803python读txt写Excel/" data-id="cjke6cdmy0000h0vuz05mhm01" class="article-share-link">Share</a>
+      <a data-url="aCrazyCoder.github.io/2018/08/03/20180803python读txt写Excel/" data-id="cjlj9rw7z0000swvuitu600v3" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python-Excel-TXT/">Python Excel TXT</a></li></ul>
@@ -224,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/07/29/hello-world/" data-id="cjke6cdn30001h0vuq03vdubi" class="article-share-link">Share</a>
+      <a data-url="aCrazyCoder.github.io/2018/07/29/hello-world/" data-id="cjlj9rw850001swvu9vgwbs4k" class="article-share-link">Partager</a>
       
       
     </footer>
@@ -244,7 +244,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python-Excel-TXT/">Python Excel TXT</a></li></ul>
     </div>
@@ -254,7 +254,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/Python-Excel-TXT/" style="font-size: 10px;">Python Excel TXT</a>
     </div>
@@ -273,7 +273,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -298,7 +298,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 JeryShao<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
