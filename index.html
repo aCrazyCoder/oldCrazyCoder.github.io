@@ -3,19 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>JeryShao</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Programming">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JeryShao">
-<meta property="og:url" content="aCrazyCoder.github.io/index.html">
-<meta property="og:site_name" content="JeryShao">
-<meta property="og:description" content="Programming">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JeryShao">
-<meta name="twitter:description" content="Programming">
+<meta name="twitter:title" content="Hexo">
   
-    <link rel="alternate" href="/atom.xml" title="JeryShao" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -36,12 +33,8 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">JeryShao</a>
+        <a href="/" id="logo">Hexo</a>
       </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">Code</a>
-        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -60,13 +53,52 @@
         <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="aCrazyCoder.github.io"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
   </div>
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-测试" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/19/测试/" class="article-date">
+  <time datetime="2018-09-19T08:47:41.000Z" itemprop="datePublished">2018-09-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/19/测试/">测试</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="title"><a href="#title" class="headerlink" title="title"></a>title</h1><hr>
+<p>作者 <a href="https://weibo.com/5409638863/profile?rightmod=1&amp;wvr=6&amp;mod=personinfo" target="_blank" rel="external">@JeryShao</a><br>2018 年 08月 03日</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/19/测试/" data-id="cjm8wxd9g0004wcvunx7jq2dy" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Qt设计模式读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,13 +124,26 @@
       
         <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><hr>
 <h2 id="2018-09-05"><a href="#2018-09-05" class="headerlink" title="2018.09.05"></a>2018.09.05</h2><ul>
-<li>派生类访问基类成员函数：</li>
+<li><strong>派生类访问基类成员函数</strong>：</li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Account &#123;&#125;;</div><div class="line"><span class="keyword">class</span> InsecureAccount: <span class="keyword">public</span> Account &#123;&#125;;</div><div class="line">InsecureAccount acct;</div><div class="line">acct.Account::deposit(<span class="number">6.23</span>); <span class="comment">//注意调用方式</span></div></pre></td></tr></table></figure>
+<hr>
+<h2 id="2018-09-19"><a href="#2018-09-19" class="headerlink" title="2018.09.19"></a>2018.09.19</h2><ul>
+<li><strong>inline函数</strong>：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">max</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> a &gt; b ? a : b</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> main()</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> temp = max(<span class="number">3</span>,<span class="number">5</span>)</div><div class="line">    etc</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>内联函数要求编译器将所有对该函数的调用都以函数完全展开之后的代码来替换。<br>inline函数与define宏类似，但有一个重大差异：对#define宏的替换过程是由预处理器完成的，预处理器本质上就是一个文本编辑器。<br>对inline函数的替换过程是由编译器完成的，它会执行更智能的操作，进行正确的类型检查。</p>
+<ul>
+<li>[x] inline函数必须在被调用之前定义</li>
+<li>[x] 在一个源代码模块中只能又一次inline定义</li>
+<li>[x] 如果类成员函数的定义出现在类定义之内，则成员函数就是隐含inline的</li>
+</ul>
+<p>一般而言，应该避免使用代码替换宏。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/09/05/Qt设计模式读书笔记/" data-id="cjlp77i0u0000kgvu8ydtun9l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/05/Qt设计模式读书笔记/" data-id="cjm8wxd9e0003wcvu1cz4os1e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
@@ -151,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/09/01/C++_函数后加const含义/" data-id="cjlp77i140003kgvuuj1w5nul" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/C++_函数后加const含义/" data-id="cjm8wxd990001wcvuvn7bpyeu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
@@ -201,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="aCrazyCoder.github.io/2018/08/03/20180803python读txt写Excel/" data-id="cjlp77i0z0001kgvugexs0wom" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/08/03/20180803python读txt写Excel/" data-id="cjm8wxd940000wcvu05kv79jf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -257,6 +302,10 @@
       <ul>
         
           <li>
+            <a href="/2018/09/19/测试/">测试</a>
+          </li>
+        
+          <li>
             <a href="/2018/09/05/Qt设计模式读书笔记/">Qt设计模式读书笔记</a>
           </li>
         
@@ -280,7 +329,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2018 JeryShao<br>
+      &copy; 2018 John Doe<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
