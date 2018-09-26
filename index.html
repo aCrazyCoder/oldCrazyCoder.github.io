@@ -55,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="www.jeryshao.top"></form>
@@ -91,10 +91,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a>读书笔记</h1><hr>
-<h2 id="2018-09-05"><a href="#2018-09-05" class="headerlink" title="2018.09.05"></a>2018.09.05</h2><ul>
-<li><strong>派生类访问基类成员函数</strong>：</li>
+<h2 id="2018-09-26"><a href="#2018-09-26" class="headerlink" title="2018.09.26"></a>2018.09.26</h2><ul>
+<li><strong>C++数据类型转换</strong>：</li>
 </ul>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Account &#123;&#125;;</div><div class="line"><span class="keyword">class</span> InsecureAccount: <span class="keyword">public</span> Account &#123;&#125;;</div><div class="line">InsecureAccount acct;</div><div class="line">acct.Account::deposit(<span class="number">6.23</span>); <span class="comment">//注意调用方式</span></div></pre></td></tr></table></figure>
+<p>1·static_cast会进行静态的安全性检查，一般用于内置数据类型的转换和通常的类之间的转换。<br>2·const_cast主要是用来去掉指针和引用的const和volatile类型。<br>3·reinterpret_cast用于完全没有关系指针或引用之间的转换，比如字符指针转整形指针。<br>4·dynamic_cast通常用于基类和派生类之间的相互转换。动态类型转换，运行时类型安全检查(转换失败返回NULL)。</p>
+<p><strong><code>去const属性用const_cast。 基本类型转换用static_cast。 多态类之间的类型转换用daynamic_cast。 不同类型的指针类型转换用reinterpret_cast。</code></strong></p>
+<ul>
+<li><strong>引用和指针的区别</strong>：</li>
+</ul>
+<p>1·一个最大的不同点就是：引用不是一个对象，所以它没有实际的地址。指针是一个对象，它有实际的地址，所以我们可以定义指向指针的指针，但是绝对不能定义指向引用的指针。<br>2·引用在其生命周期中不能改变所绑定的对象，但是指针可以在其生命周期内先后指向不同的对象。<br>3·引用在定义的时候必须进行初始化，而指针可以不必进行初始化(不推荐这种做法)。</p>
 <hr>
 <h2 id="2018-09-19"><a href="#2018-09-19" class="headerlink" title="2018.09.19"></a>2018.09.19</h2><ul>
 <li><strong>inline函数</strong>：</li>
@@ -107,11 +112,16 @@
 <li>[x] 如果类成员函数的定义出现在类定义之内，则成员函数就是隐含inline的</li>
 </ul>
 <p>一般而言，应该避免使用代码替换宏。</p>
+<hr>
+<h2 id="2018-09-05"><a href="#2018-09-05" class="headerlink" title="2018.09.05"></a>2018.09.05</h2><ul>
+<li><strong>派生类访问基类成员函数</strong>：</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span> Account &#123;&#125;;</div><div class="line"><span class="keyword">class</span> InsecureAccount: <span class="keyword">public</span> Account &#123;&#125;;</div><div class="line">InsecureAccount acct;</div><div class="line">acct.Account::deposit(<span class="number">6.23</span>); <span class="comment">//注意调用方式</span></div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="www.jeryshao.top/2018/09/05/Qt设计模式读书笔记/" data-id="cjm92pt4m0004hsvum478nzsu" class="article-share-link">Partager</a>
+      <a data-url="www.jeryshao.top/2018/09/05/Qt设计模式读书笔记/" data-id="cjmj8y0d90004ocvu6gtwpiw5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
@@ -164,7 +174,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="www.jeryshao.top/2018/09/01/C++_函数后加const含义/" data-id="cjm92pt4h0002hsvua4j3isdy" class="article-share-link">Partager</a>
+      <a data-url="www.jeryshao.top/2018/09/01/C++_函数后加const含义/" data-id="cjmj8y0dn0009ocvuxvcp5700" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
@@ -214,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="www.jeryshao.top/2018/08/03/20180803python读txt写Excel/" data-id="cjm92pt4e0001hsvuzol15fpu" class="article-share-link">Partager</a>
+      <a data-url="www.jeryshao.top/2018/08/03/20180803python读txt写Excel/" data-id="cjmj8y0a90001ocvuoi4h2ywe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -236,7 +246,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qt/">Qt</a></li></ul>
     </div>
@@ -246,7 +256,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/Qt/" style="font-size: 10px;">Qt</a>
     </div>
@@ -265,7 +275,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -294,7 +304,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 JeryShao<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
